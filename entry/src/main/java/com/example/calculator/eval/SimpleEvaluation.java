@@ -33,4 +33,7 @@ public class SimpleEvaluation {
         return new SimpleEvaluation();
     }
 
+    public void clear() {
+        expressionBuilder = new StringBuilder();
+    }
 }

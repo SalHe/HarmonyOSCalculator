@@ -39,11 +39,6 @@ public class MainAbilitySlice extends AbilitySlice {
         updateExpressionToView();
     }
 
-    private void backspace() {
-        evaluation.backspace();
-        updateExpressionToView();
-    }
-
     private void updateExpressionToView() {
         expressionText.setText(resolveOperatorInExpression(evaluation.getExpression()));
         evaluationText.setText(evaluation.eval() + "");
@@ -60,7 +55,22 @@ public class MainAbilitySlice extends AbilitySlice {
                 .setClickedListener(btn -> appendExpression("%"));
 
         findComponentById(ResourceTable.Id_btn_backspace)
-                .setClickedListener(btn -> backspace());
+                .setClickedListener(btn -> {
+                    evaluation.backspace();
+                    updateExpressionToView();
+                });
+
+        findComponentById(ResourceTable.Id_btn_clear)
+                .setClickedListener(btn -> {
+                    evaluation.clear();
+                    updateExpressionToView();
+                });
+
+        findComponentById(ResourceTable.Id_btn_equal)
+                .setClickedListener(btn -> {
+                    expressionText.setText(resolveOperatorInExpression(evaluation.getExpression()) + "=" + evaluation.eval());
+                    evaluation = SimpleEvaluation.getInstance();
+                });
     }
 
     private void bindOperatorButtons() {
