@@ -253,6 +253,7 @@
 
         <!--    =    -->
         <Button
+            ohos:id="$+id:btn_equal"
             ohos:height="match_parent"
             ohos:width="0"
             ohos:background_element="$graphic:bg_equals_btn"
