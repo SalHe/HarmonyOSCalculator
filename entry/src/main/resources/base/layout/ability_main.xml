@@ -5,14 +5,262 @@
     ohos:width="match_parent"
     ohos:orientation="vertical">
 
+    <!--  计算表达式  -->
     <Text
-        ohos:id="$+id:text_helloworld"
-        ohos:height="match_content"
-        ohos:width="match_content"
+        ohos:id="$+id:text_expression"
+        ohos:height="0"
+        ohos:width="match_parent"
+        ohos:text="0"
+        ohos:text_alignment="right"
+        ohos:text_size="60vp"
+        ohos:weight="1"/>
+
+    <!--  计算结果  -->
+    <Text
+        ohos:id="$+id:text_evaluation"
+        ohos:height="0"
+        ohos:width="match_parent"
         ohos:background_element="$graphic:background_ability_main"
         ohos:layout_alignment="horizontal_center"
-        ohos:text="$string:HelloWorld"
-        ohos:text_size="50"
-        />
+        ohos:text="0"
+        ohos:text_alignment="right"
+        ohos:text_color="#D3D3D3"
+        ohos:text_size="40vp"
+        ohos:weight="1"/>
+
+    <!--  C ÷ × ←  -->
+    <DirectionalLayout
+        ohos:height="0"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal"
+        ohos:weight="1">
+
+        <Button
+            ohos:id="$+id:btn_clear"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_operator_btn"
+            ohos:text="C"
+            ohos:text_color="blue"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_div"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_operator_btn"
+            ohos:text="÷"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_multiply"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_operator_btn"
+            ohos:text="×"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_backspace"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_operator_btn"
+            ohos:text="←"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+    </DirectionalLayout>
+
+    <!--  7 8 9 -  -->
+    <DirectionalLayout
+        ohos:height="0"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal"
+        ohos:weight="1">
+
+        <Button
+            ohos:id="$+id:btn_num7"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_num_btn"
+            ohos:text="7"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_num8"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_num_btn"
+            ohos:text="8"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_num9"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_num_btn"
+            ohos:text="9"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_sub"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_operator_btn"
+            ohos:text="-"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+    </DirectionalLayout>
+
+    <!--  4 5 6 +  -->
+    <DirectionalLayout
+        ohos:height="0"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal"
+        ohos:weight="1">
+
+        <Button
+            ohos:id="$+id:btn_num4"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_num_btn"
+            ohos:text="4"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_num5"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_num_btn"
+            ohos:text="5"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_num6"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_num_btn"
+            ohos:text="6"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+        <Button
+            ohos:id="$+id:btn_add"
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_operator_btn"
+            ohos:text="+"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+    </DirectionalLayout>
+
+    <!--  1 2 3|  -->
+    <!--  % 0 .| = -->
+    <DirectionalLayout
+        ohos:height="0"
+        ohos:width="match_parent"
+        ohos:orientation="horizontal"
+        ohos:weight="2">
+
+        <!--  1 2 3  -->
+        <!--  % 0 .  -->
+        <DirectionalLayout
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:weight="3">
+
+            <!--  1 2 3  -->
+            <DirectionalLayout
+                ohos:height="0"
+                ohos:width="match_parent"
+                ohos:orientation="horizontal"
+                ohos:weight="1">
+
+                <Button
+                    ohos:id="$+id:btn_num1"
+                    ohos:height="match_parent"
+                    ohos:width="0"
+                    ohos:background_element="$graphic:bg_num_btn"
+                    ohos:text="1"
+                    ohos:text_size="30vp"
+                    ohos:weight="1"/>
+
+                <Button
+                    ohos:id="$+id:btn_num2"
+                    ohos:height="match_parent"
+                    ohos:width="0"
+                    ohos:background_element="$graphic:bg_num_btn"
+                    ohos:text="2"
+                    ohos:text_size="30vp"
+                    ohos:weight="1"/>
+
+                <Button
+                    ohos:id="$+id:btn_num3"
+                    ohos:height="match_parent"
+                    ohos:width="0"
+                    ohos:background_element="$graphic:bg_num_btn"
+                    ohos:text="3"
+                    ohos:text_size="30vp"
+                    ohos:weight="1"/>
+            </DirectionalLayout>
+
+            <!--  % 0 .  -->
+            <DirectionalLayout
+                ohos:height="0"
+                ohos:width="match_parent"
+                ohos:orientation="horizontal"
+                ohos:weight="1">
+
+                <Button
+                    ohos:id="$+id:btn_percent"
+                    ohos:height="match_parent"
+                    ohos:width="0"
+                    ohos:background_element="$graphic:bg_num_btn"
+                    ohos:text="%"
+                    ohos:text_size="30vp"
+                    ohos:weight="1"/>
+
+                <Button
+                    ohos:id="$+id:btn_num0"
+                    ohos:height="match_parent"
+                    ohos:width="0"
+                    ohos:background_element="$graphic:bg_num_btn"
+                    ohos:text="0"
+                    ohos:text_size="30vp"
+                    ohos:weight="1"/>
+
+                <Button
+                    ohos:id="$+id:btn_point"
+                    ohos:height="match_parent"
+                    ohos:width="0"
+                    ohos:background_element="$graphic:bg_num_btn"
+                    ohos:text="."
+                    ohos:text_size="30vp"
+                    ohos:weight="1"/>
+            </DirectionalLayout>
+
+        </DirectionalLayout>
+
+        <!--    =    -->
+        <Button
+            ohos:height="match_parent"
+            ohos:width="0"
+            ohos:background_element="$graphic:bg_equals_btn"
+            ohos:text="="
+            ohos:text_color="white"
+            ohos:text_size="30vp"
+            ohos:weight="1"/>
+
+    </DirectionalLayout>
 
 </DirectionalLayout>
