@@ -20,8 +20,9 @@ public class SimpleEvaluation {
     }
 
     public double eval() {
-
-        return 0;
+        String expression = expressionBuilder.toString();
+        expression = expression.replace("%", "/100");
+        return Calculator.conversion(expression);
     }
 
     public String getExpression() {
